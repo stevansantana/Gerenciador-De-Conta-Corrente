@@ -1,0 +1,26 @@
+<div class="saque-page">
+  <div class="saque-container">
+    <div class="saque-header">
+      <h2>Realizar Saque</h2>
+    </div>
+    
+    <p class="saldo-info">
+      Saldo atual: <span class="saldo-valor">R$ <%= @correntista.saldo %></span>
+    </p>
+
+    <%= form_with url: saque_path, method: :post, local: true, class: "saque-form" do |form| %>
+      <div class="form-group">
+        <%= form.label :valor, "Valor a sacar (R$):" %>
+        <%= form.number_field :valor, step: 0.01, class: "form-control" %>
+      </div>
+
+      <%= form.submit "Sacar", class: "btn-saque" %>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <p class="alert-message"><%= flash[:alert] %></p>
+    <% end %>
+
+    <%= link_to "Voltar ao menu", menu_path, class: "btn-voltar" %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="saldo-page">
+  <div class="saldo-container">
+    <div class="saldo-header">
+      <h2>Seu saldo atual é:</h2>
+    </div>
+    
+    <div class="saldo-value">
+      R$ <%= @correntista.saldo %>
+    </div>
+    
+    <%= link_to 'Voltar ao menu', menu_path, class: "btn-voltar" %>
+  </div>
+</div>

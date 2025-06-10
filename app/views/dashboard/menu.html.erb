@@ -1,0 +1,22 @@
+<div class="menu-page">
+  <div class="menu-container">
+    <div class="menu-header">
+      <h1>Bem-vindo, <%= @correntista.nome %>!</h1>
+      <p>Escolha uma das opções abaixo:</p>
+    </div>
+
+    <ol class="menu-options">
+      <li><%= link_to 'Ver Saldo', saldo_path, class: "menu-link" %></li>
+      <li><%= link_to 'Extrato', extrato_path, class: "menu-link" %></li>
+      <li><%= link_to 'Saque', saque_path, class: "menu-link" %></li>
+      <li><%= link_to 'Depósito', deposito_path, class: "menu-link" %></li>
+      <li><%= link_to 'Transferência', transferencia_path, class: "menu-link" %></li>
+
+      <% if @correntista.perfil == 'VIP' %>
+        <li class="vip-option"><%= link_to 'Solicitar visita do gerente', visita_path, class: "menu-link" %></li>
+      <% end %>
+      
+      <li><%= button_to 'Trocar de usuário', logout_path, method: :delete, class: "menu-button", form_class: "menu-button-form" %></li>
+    </ol>
+  </div>
+</div>

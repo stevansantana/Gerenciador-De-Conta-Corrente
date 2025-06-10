@@ -1,0 +1,36 @@
+<div class="extrato-page">
+  <div class="extrato-container">
+    <div class="extrato-header">
+      <h2>Extrato de Movimentações</h2>
+    </div>
+
+    <table class="extrato-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @transacoes.each do |t| %>
+          <tr>
+            <td><%= t.created_at.strftime('%d/%m/%Y') %></td>
+            <td><%= t.created_at.strftime('%H:%M') %></td>
+            <td><%= t.descricao %></td>
+            <td>
+              <% if t.valor.negative? %>
+                <span class="valor-negativo">- R$ <%= '%.2f' % t.valor.abs %></span>
+              <% else %>
+                <span class="valor-positivo">+ R$ <%= '%.2f' % t.valor %></span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'Voltar ao menu', menu_path, class: "btn-voltar" %>
+  </div>
+</div>  

@@ -1,0 +1,21 @@
+<div class="visita-page">
+  <div class="visita-container">
+    <div class="visita-header">
+      <h2>Solicitar Visita do Gerente</h2>
+    </div>
+    
+    <p class="valor-info">
+      Esse serviço tem um custo de <strong class="valor-destaque">R$ 50,00</strong>.
+    </p>
+    
+    <p class="confirmacao-message">
+      Deseja confirmar a solicitação?
+    </p>
+
+    <%= form_with url: visita_confirma_path, method: :post, local: true do |form| %>
+      <%= form.submit "Confirmar Solicitação", class: "btn-confirmar" %>
+    <% end %>
+
+    <%= link_to "Cancelar e voltar ao menu", menu_path, class: "btn-cancelar" %>
+  </div>
+</div>

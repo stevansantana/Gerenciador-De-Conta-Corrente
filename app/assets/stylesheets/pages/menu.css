@@ -1,0 +1,111 @@
+/* Estrutura principal */
+.menu-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 2rem;
+  }
+  
+  /* Container do menu */
+  .menu-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+  }
+  
+  /* Cabeçalho */
+  .menu-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .menu-header h1 {
+    font-size: 1.75rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-header p {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  
+  /* Lista de opções */
+  .menu-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .menu-options li {
+    display: flex;
+  }
+  
+  .menu-link, .menu-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-link {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .menu-link:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+  }
+  
+  .menu-button {
+    background-color: #f1f5f9;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    margin-top: 1.5rem;
+  }
+  
+  .menu-button:hover {
+    background-color: #fee2e2;
+    transform: translateY(-1px);
+  }
+  
+  /* Destaque para opção VIP */
+  .vip-option .menu-link {
+    background-color: #f5f3ff;
+    color: #7c3aed;
+    border: 1px solid #ddd6fe;
+  }
+  
+  .vip-option .menu-link:hover {
+    background-color: #ede9fe;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .menu-container {
+      padding: 1.5rem;
+    }
+    
+    .menu-header h1 {
+      font-size: 1.5rem;
+    }
+  }
