@@ -5,7 +5,8 @@
       <p>Informe suas credenciais para continuar</p>
     </div>
 
-    <%= form_with url: login_path, local: true, class: "login-form" do |form| %>
+    <%= form_with url: login_path, local: true, data: { turbo: false }, class: "login-form" do |form| %>
+
       <div class="form-group">
         <%= form.label :conta_corrente %>
         <%= form.text_field :conta_corrente, class: "form-control" %>

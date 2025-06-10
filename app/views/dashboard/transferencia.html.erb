@@ -16,7 +16,7 @@
 
       <div class="form-group">
         <%= form.label :valor, "Valor a transferir (R$):" %>
-        <%= form.number_field :valor, step: 0.01, min: 0.01, class: "form-control" %>
+        <%= form.number_field :valor, step: 0.01, min: 0.01, class: "form-control", require: true%>
       </div>
 
       <%= form.submit "Transferir", class: "btn-transferencia" %>

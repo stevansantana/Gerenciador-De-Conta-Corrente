@@ -113,17 +113,7 @@
     background-color: #e2e8f0;
   }
   
-  /* Mensagem de alerta */
-  .alert-message {
-    color: #dc2626;
-    font-size: 0.875rem;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background-color: #fef2f2;
-    border-radius: 6px;
-    border: 1px solid #fecaca;
-  }
+  
   
   /* Responsividade */
   @media (max-width: 480px) {

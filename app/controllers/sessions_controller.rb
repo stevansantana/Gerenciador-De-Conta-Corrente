@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:correntista_id] = correntista.id
       redirect_to menu_path
     else
-      flash[:alert] = "Conta ou senha inválida"
+      flash.now[:alert] = "Conta ou senha inválida"
       render :new
     end
   end

@@ -11,7 +11,7 @@
     <%= form_with url: "/deposito", method: :post, local: true, class: "deposito-form" do |form| %>
       <div class="form-group">
         <%= form.label :valor, "Valor a depositar (R$):" %>
-        <%= form.number_field :valor, step: 0.01, min: 0.01, class: "form-control" %>
+        <%= form.number_field :valor, step: 0.01, min: 0.01, class: "form-control", required: true %>
       </div>
 
       <%= form.submit "Depositar", class: "btn-deposito" %>

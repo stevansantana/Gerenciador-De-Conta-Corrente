@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "sessions#new"
 
   get "/login", to: "sessions#new"
-  post   "/login",  to: "sessions#create"
+  post   "/login", to: "sessions#create"
 
   delete "/logout", to: "sessions#destroy"
 
@@ -10,15 +10,15 @@ Rails.application.routes.draw do
   get "/saldo", to: "dashboard#saldo"
   get "/extrato", to: "dashboard#extrato"
 
-  get  "/saque",     to: "dashboard#saque"
-  post "/saque",     to: "dashboard#realizar_saque"
+  get  "/saque", to: "dashboard#saque"
+  post "/saque", to: "dashboard#realizar_saque"
 
-  get  "/deposito",     to: "dashboard#deposito"
-  post "/deposito",     to: "dashboard#realizar_deposito"
+  get  "/deposito", to: "dashboard#deposito"
+  post "/deposito", to: "dashboard#realizar_deposito"
 
   get  "/transferencia", to: "dashboard#transferencia"
   post "/transferencia", to: "dashboard#realizar_transferencia"
 
-  get  "/visita",      to: "dashboard#visita"
+  get  "/visita", to: "dashboard#visita"
   post "/visita_confirma", to: "dashboard#confirmar_visita"
 end
