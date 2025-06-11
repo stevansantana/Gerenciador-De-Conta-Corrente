@@ -54,14 +54,14 @@ class DashboardController < ApplicationController
   def realizar_transferencia
     destino = Correntista.find_by(conta_corrente: params[:conta_destino])
     valor = params[:valor].to_f
-
+  
     begin
       TransferenciaService.new(origem: @correntista, destino: destino, valor: valor).executar!
       flash[:notice] = "Transferência de R$ #{'%.2f' % valor} realizada com sucesso."
       redirect_to menu_path
     rescue => e
-      flash.now[:alert] = e.message
-      render :transferencia
+      flash[:alert] = e.message # Alterado de flash.now[:alert] para flash[:alert]
+      redirect_to transferencia_path # Redireciona de volta para a página de transferência
     end
   end
 
