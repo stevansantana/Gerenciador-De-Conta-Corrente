@@ -55,9 +55,14 @@ Antes de começar, você precisará ter instalado:
  
 ### 4. **Rode o projeto**
 
+
 - Abra o [Visual Studio Code](https://code.visualstudio.com/) na pasta do projeto
 - Abra o terminal do Visual Studio Code
 - Digite ```rails s``` para subir o servidor
 - Abra o navegador em http://localhost:3000
+
+### 5. **Video do projeto**
+
+https://github.com/user-attachments/assets/93ae30dd-56af-4d38-9a9c-22229e377724
 
 
