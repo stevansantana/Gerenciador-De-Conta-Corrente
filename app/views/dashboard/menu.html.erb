@@ -1,5 +1,11 @@
 <div class="menu-page">
   <div class="menu-container">
+    <% if flash[:notice] %>
+      <div id="flash-notice" class="alert alert-success" data-controller="flash" data-flash-target="message">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <div class="menu-header">
       <h1>Bem-vindo, <%= @correntista.nome %>!</h1>
       <p>Escolha uma das opções abaixo:</p>
@@ -16,7 +22,32 @@
         <li class="vip-option"><%= link_to 'Solicitar visita do gerente', visita_path, class: "menu-link" %></li>
       <% end %>
       
-      <li><%= button_to 'Trocar de usuário', logout_path, method: :delete, class: "menu-button", form_class: "menu-button-form" %></li>
+      <li><%= button_to 'Sair', logout_path, method: :delete, class: "menu-button", form_class: "menu-button-form" %></li>
     </ol>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const notice = document.getElementById("flash-notice");
+    if (notice) {
+      setTimeout(() => {
+        notice.style.opacity = "0";
+        setTimeout(() => {
+          notice.remove();
+        }, 1000);
+      }, 5000);
+    }
+
+    const alert = document.getElementById("flash-alert");
+    if (alert) {
+      setTimeout(() => {
+        alert.style.opacity = "0";
+        setTimeout(() => {
+          alert.remove();
+        }, 1000);
+      }, 5000);
+    }
+  });
+</script>
+

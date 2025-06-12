@@ -10,6 +10,7 @@ class DashboardController < ApplicationController
   end
 
   def saldo
+    @saldo = @correntista.saldo_com_taxas
   end
 
   def extrato
@@ -17,6 +18,25 @@ class DashboardController < ApplicationController
   end
 
   def deposito
+  end
+
+  def realizar_deposito
+    valor = params[:valor].to_f
+
+    begin
+      @correntista.depositar!(valor)
+
+      if @correntista.perfil == 'VIP' && @correntista.saldo < 0
+        flash[:notice] = "Depósito de R$ #{'%.2f' % valor} realizado com sucesso. Seu saldo foi regularizado."
+      else
+        flash[:notice] = "Depósito de R$ #{'%.2f' % valor} realizado com sucesso"
+      end
+
+      redirect_to menu_path
+    rescue => e
+      flash.now[:alert] = e.message
+      render :deposito
+    end
   end
 
   def saque
@@ -35,33 +55,20 @@ class DashboardController < ApplicationController
     end
   end
 
-  def realizar_deposito
-    valor = params[:valor].to_f
-
-    begin
-      @correntista.depositar!(valor)
-      flash[:notice] = "Depósito de R$ #{'%.2f' % valor} realizado com sucesso"
-      redirect_to menu_path
-    rescue => e
-      flash.now[:alert] = e.message
-      render :deposito
-    end
-  end
-
   def transferencia
   end
 
   def realizar_transferencia
     destino = Correntista.find_by(conta_corrente: params[:conta_destino])
     valor = params[:valor].to_f
-  
+
     begin
       TransferenciaService.new(origem: @correntista, destino: destino, valor: valor).executar!
       flash[:notice] = "Transferência de R$ #{'%.2f' % valor} realizada com sucesso."
       redirect_to menu_path
     rescue => e
-      flash[:alert] = e.message # Alterado de flash.now[:alert] para flash[:alert]
-      redirect_to transferencia_path # Redireciona de volta para a página de transferência
+      flash[:alert] = e.message 
+      redirect_to transferencia_path 
     end
   end
 

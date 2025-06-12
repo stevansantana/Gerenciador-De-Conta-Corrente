@@ -4,9 +4,16 @@
       <h2>Seu saldo atual é:</h2>
     </div>
     
-    <div class="saldo-value">
-      R$ <%= @correntista.saldo %>
+    <div class="saldo-value <%= @saldo < 0 ? 'negative' : 'positive' %>">
+      R$ <%= '%.2f' % @saldo %>
     </div>
+
+    <% if @correntista.perfil == 'VIP' && @correntista.saldo < 0 %>
+      <div class="vip-warning">
+        <p>Atenção: Como cliente VIP, seu saldo negativo está sendo reduzido em 0.1% por minuto.</p>
+        <p>Faça um depósito para regularizar sua situação.</p>
+      </div>
+    <% end %>
     
     <%= link_to 'Voltar ao menu', menu_path, class: "btn-voltar" %>
   </div>

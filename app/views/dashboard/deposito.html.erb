@@ -5,7 +5,7 @@
     </div>
     
     <p class="saldo-info">
-      Saldo atual: <span class="saldo-valor">R$ <%= @correntista.saldo %></span>
+      Saldo atual: <span class="saldo-valor <%= @correntista.saldo < 0 ? 'negative' : 'positive' %>">R$ <%= '%.2f' % @correntista.saldo %></span>
     </p>
 
     <%= form_with url: "/deposito", method: :post, local: true, class: "deposito-form" do |form| %>

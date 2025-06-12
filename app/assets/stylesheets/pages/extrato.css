@@ -1,103 +1,96 @@
-/* Estrutura principal */
 .extrato-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f8fafc;
-    padding: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
   
-  /* Container do extrato */
+.extrato-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.extrato-header h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+  
+.extrato-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+  
+.extrato-table th {
+  background-color: #6366f1;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.extrato-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.extrato-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+  
+.extrato-table tr:hover {
+  background-color: #f1f5f9;
+}
+  
+.valor-positivo {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.valor-negativo {
+  color: #dc2626;
+  font-weight: 500;
+}
+  
+.btn-voltar {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+  
+@media (max-width: 768px) {
   .extrato-container {
-    width: 100%;
-    max-width: 800px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    padding: 2.5rem;
-    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    overflow-x: auto;
   }
   
-  /* Cabeçalho */
-  .extrato-header h2 {
-    font-size: 1.5rem;
-    color: #1e293b;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  /* Tabela de extrato */
   .extrato-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-  
-  .extrato-table th {
-    background-color: #6366f1;
-    color: white;
-    padding: 0.75rem;
-    text-align: left;
-  }
-  
-  .extrato-table td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  
-  .extrato-table tr:nth-child(even) {
-    background-color: #f8fafc;
-  }
-  
-  .extrato-table tr:hover {
-    background-color: #f1f5f9;
-  }
-  
-  /* Estilo para valores */
-  .valor-positivo {
-    color: #16a34a;
-    font-weight: 500;
-  }
-  
-  .valor-negativo {
-    color: #dc2626;
-    font-weight: 500;
-  }
-  
-  /* Botão de voltar */
-  .btn-voltar {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #6366f1;
-    color: white;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    margin-top: 1rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .btn-voltar:hover {
-    background-color: #4f46e5;
-    transform: translateY(-1px);
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .extrato-container {
-      padding: 1.5rem;
-      overflow-x: auto;
-    }
-    
-    .extrato-table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-  }
+}

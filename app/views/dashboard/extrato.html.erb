@@ -21,9 +21,9 @@
             <td><%= t.descricao %></td>
             <td>
               <% if t.valor.negative? %>
-                <span class="valor-negativo">- R$ <%= '%.2f' % t.valor.abs %></span>
+                <span class="valor-negativo"> (R$ <%= '%.2f' % t.valor.abs %>)</span>
               <% else %>
-                <span class="valor-positivo">+ R$ <%= '%.2f' % t.valor %></span>
+                <span class="valor-positivo"> R$ <%= '%.2f' % t.valor %></span>
               <% end %>
             </td>
           </tr>

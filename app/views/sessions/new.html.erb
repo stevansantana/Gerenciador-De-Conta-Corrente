@@ -1,5 +1,17 @@
 <div class="login-page">
   <div class="login-container">
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <div class="login-header">
       <h1>Acesse sua conta</h1>
       <p>Informe suas credenciais para continuar</p>
@@ -30,3 +42,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Para mensagens de sucesso
+    const notice = document.querySelector('.alert-success');
+    if (notice) {
+      setTimeout(() => {
+        notice.style.opacity = '0';
+        setTimeout(() => notice.remove(), 1000);
+      }, 5000);
+    }
+
+    // Para mensagens de erro
+    const alert = document.querySelector('.alert-danger');
+    if (alert) {
+      setTimeout(() => {
+        alert.style.opacity = '0';
+        setTimeout(() => alert.remove(), 1000);
+      }, 5000);
+    }
+  });
+</script>

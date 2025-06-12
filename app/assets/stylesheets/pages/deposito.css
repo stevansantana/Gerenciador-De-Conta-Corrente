@@ -1,133 +1,140 @@
-/* Estrutura principal */
 .deposito-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f8fafc;
-    padding: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
   
-  /* Container do depósito */
+.deposito-container {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+}
+  
+.deposito-header h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+  
+.saldo-info {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+  
+.saldo-valor {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.saldo-valor.positive {
+  color: #16a34a;
+}
+
+.saldo-valor.negative {
+  color: #dc2626;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+  
+.deposito-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+  
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+  
+.form-group label {
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 500;
+}
+  
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+  
+.form-control:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+  
+.btn-deposito {
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+  
+.btn-deposito:hover {
+  background-color: #0d9f6e;
+  transform: translateY(-1px);
+}
+
+.btn-voltar {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-top: 1.5rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+  
+.btn-voltar:hover {
+  background-color: #e2e8f0;
+}
+  
+.alert-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+}
+  
+@media (max-width: 480px) {
   .deposito-container {
-    width: 100%;
-    max-width: 500px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    padding: 2.5rem;
-    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
   }
-  
-  /* Cabeçalho */
-  .deposito-header h2 {
-    font-size: 1.5rem;
-    color: #1e293b;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  /* Saldo atual */
-  .saldo-info {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #475569;
-    margin-bottom: 1.5rem;
-  }
-  
-  .saldo-valor {
-    font-weight: 600;
-    color: #16a34a;
-  }
-  
-  /* Formulário */
-  .deposito-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .form-group label {
-    font-size: 0.875rem;
-    color: #475569;
-    font-weight: 500;
-  }
-  
-  .form-control {
-    padding: 0.75rem 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.2s;
-  }
-  
-  .form-control:focus {
-    outline: none;
-    border-color: #10b981; /* Verde para diferenciar do saque */
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-  }
-  
-  /* Botões */
-  .btn-deposito {
-    background-color: #10b981; /* Verde para ação positiva */
-    color: white;
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 0.5rem;
-  }
-  
-  .btn-deposito:hover {
-    background-color: #0d9f6e;
-    transform: translateY(-1px);
-  }
-  
-  .btn-voltar {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #f1f5f9;
-    color: #475569;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    margin-top: 1.5rem;
-    border: 1px solid #e2e8f0;
-    text-align: center;
-  }
-  
-  .btn-voltar:hover {
-    background-color: #e2e8f0;
-  }
-  
-  /* Mensagem de alerta */
-  .alert-message {
-    color: #dc2626;
-    font-size: 0.875rem;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background-color: #fef2f2;
-    border-radius: 6px;
-    border: 1px solid #fecaca;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 480px) {
-    .deposito-container {
-      padding: 1.5rem;
-    }
-  }
+}

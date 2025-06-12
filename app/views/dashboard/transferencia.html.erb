@@ -17,7 +17,7 @@
     <% end %>
 
     <p class="saldo-info">
-      Saldo atual: <span class="saldo-valor">R$ <%= '%.2f' % @correntista.saldo %></span>
+      Saldo atual: <span class="saldo-valor <%= @correntista.saldo < 0 ? 'negative' : 'positive' %>">R$ <%= '%.2f' % @correntista.saldo %></span>
     </p>
 
     <%= form_with url: transferencia_path, method: :post, local: true, class: "transferencia-form" do |form| %>
