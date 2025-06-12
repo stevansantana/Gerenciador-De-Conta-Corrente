@@ -62,7 +62,7 @@ Antes de começar, você precisará ter instalado:
 - Digite ```rails s``` para subir o servidor
 - Abra o navegador em http://localhost:3000
 
-### 5. **Video do projeto**
+### 5. **Vídeo do projeto**
 
 https://github.com/user-attachments/assets/93ae30dd-56af-4d38-9a9c-22229e377724
 
