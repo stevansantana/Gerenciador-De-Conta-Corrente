@@ -52,4 +52,12 @@ Antes de começar, você precisará ter instalado:
   - Conta: 12345 | Senha: 1234 | Tipo: Normal
 
   - Conta: 54321 | Senha: 4321 | Tipo: VIP
+ 
+### 4. **Rode o projeto**
+
+- Abra o [Visual Studio Code](https://code.visualstudio.com/) na pasta do projeto
+- Abra o terminal do Visual Studio Code
+- Digite ```rails s``` para subir o servidor
+- Abra o navegador em http://localhost:3000
+
 
