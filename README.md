@@ -49,7 +49,7 @@ Antes de começar, você precisará ter instalado:
   - rails db:seed
 
 - Dois usuários serão criados automaticamente e o banco de dados será populado:
-- O arquivo onde estão localizados os usuários é **seeds.rb**
+- O arquivo onde estão localizados os usuários pré-cadastrados é **seeds.rb**
 
   - Conta: 12345 | Senha: 1234 | Tipo: Normal
 
