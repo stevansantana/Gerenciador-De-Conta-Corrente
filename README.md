@@ -13,6 +13,8 @@ Aplicação web desenvolvida com **Ruby on Rails 8.0.2** para simular um sistema
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [Linux Lubuntu](https://lubuntu.me/)
+  - **Obs: É recomendável usar Linux ou Mac**
 
 ---
 
