@@ -1,24 +1,55 @@
-# README
+# 💰 Gerenciador de Conta Corrente
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicação web desenvolvida com **Ruby on Rails 8.0.2** para simular um sistema de conta corrente com funcionalidades de saldo, extrato, saque, depósito, transferência e mais.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## 🚀 Tecnologias utilizadas
 
-* System dependencies
+- [Ruby 3.4.4](https://www.ruby-lang.org/)  
+- [Rails 8.0.2](https://rubyonrails.org/)  
+- [PostgreSQL](https://www.postgresql.org/)  
+- [Redis](https://redis.io/)  
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
 
-* Configuration
+---
 
-* Database creation
+## ⚙️ Pré-requisitos
 
-* Database initialization
+Antes de começar, você precisará ter instalado:
 
-* How to run the test suite
+- [Ruby 3.4.4](https://www.ruby-lang.org/)
+- [Rails 8.0.2](https://rubyonrails.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Redis](https://redis.io/)
+- [Node.js](https://nodejs.org/) 
+- [Yarn](https://yarnpkg.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+---
 
-* Deployment instructions
+## 🔧 Instalação
 
-* ...
+### 1. **Clone o repositório**
+
+-  git clone https://github.com/seuusuario/gerenciador_conta_corrente.git
+-  cd gerenciador_conta_corrente
+
+
+### 2. **Instale as dependências**
+
+- bundle install
+
+### 3. **Crie e configure o banco de dados**
+
+- Siga os passos abaixo:
+  - rails db:create
+  - rails db:migrate
+  - rails db:seed
+
+- Dois usuários serão criados automaticamente e o banco de dados será populado:
+
+  - Conta: 12345 | Senha: 1234 | Tipo: Normal
+
+  - Conta: 54321 | Senha: 4321 | Tipo: VIP
+
