@@ -3,6 +3,12 @@
     <div class="visita-header">
       <h2>Solicitar Visita do Gerente</h2>
     </div>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
     
     <p class="valor-info">
       Esse serviço tem um custo de <strong class="valor-destaque">R$ 50,00</strong>.

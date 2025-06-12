@@ -72,7 +72,7 @@ class DashboardController < ApplicationController
     end
   end
 
-  def visita_gerente
+  def visita
   end
 
   def confirmar_visita
@@ -80,7 +80,7 @@ class DashboardController < ApplicationController
       @correntista.solicitar_visita!
       redirect_to menu_path, notice: "Visita do gerente solicitada com sucesso. R$ 50,00 debitado."
     rescue => e
-      redirect_to menu_path, alert: e.message
+      redirect_to visita_path, alert: e.message
     end
   end
 
